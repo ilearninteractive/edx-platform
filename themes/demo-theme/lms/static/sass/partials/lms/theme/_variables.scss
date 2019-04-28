@@ -1,0 +1,64 @@
+// Sample demo theme to demonstrate SASS overrides
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo/Cairo-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../../fonts/Cairo/Cairo-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Theme colors
+//
+// Note: define colors needed by your theme first
+
+// Define the primary red color
+$green: rgb(0, 129, 0);
+$blue: $green;
+$green-hover-active: rgb(0, 155, 0);
+
+// $green: #006700;
+// $green: #00a780;
+
+// Make green the primary color
+$primary: $green;
+
+$uxpl-blue-hover-active: $green-hover-active;
+$courseware-border-bottom-color: rgb(102, 255, 102);
+
+$m-blue: $primary;  // uxpl blue base
+$m-blue-l1: tint($primary, 20%);
+$m-blue-l2: tint($primary, 40%);
+$m-blue-l3: tint($primary, 60%);
+$m-blue-l4: tint($primary, 90%);
+$m-blue-l5: tint($primary, 95%);
+$m-blue-l6: tint($primary, 100%);
+$m-blue-d1: shade($primary, 20%);
+$m-blue-d2: shade($primary, 40%);
+$m-blue-d3: shade($primary, 60%);
+$m-blue-d4: shade($primary, 90%);
+$m-blue-d5: shade($primary, 70%);
+$m-blue-d6: shade($primary, 30%);
+$m-blue-t0: rgba($primary, 0.125);
+$m-blue-t1: rgba($primary, 0.25);
+$m-blue-t2: rgba($primary, 0.5);
+$m-blue-t3: rgba($primary, 0.75);
+
+$forum-color-primary: $primary;
+$forum-color-hover: $primary;
+
+$ui-link-color: $primary;
+$ui-link-color-focus: $primary;
+$link-color: $primary;
+
+// Theme fonts
+$font-family-sans-serif: 'Cairo';
+
+// Initialize the Open edX Bootstrap theme
+@import 'edx-bootstrap/sass/open-edx/theme';
