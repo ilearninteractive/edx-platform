@@ -1,0 +1,42 @@
+.page-content-container .has-secondary .page-header-main nav .nav-item a{
+		color: $primary !important;
+}
+
+.course-bookmarks {
+  .bookmarks-results-list {
+    .bookmarks-results-list-item {
+	    .list-item-breadcrumbtrail {
+	          color: $primary !important;
+	  	}
+	  	p.list-item-right-section span {
+	          color: $primary !important;
+	  	}
+
+      &:hover {
+        border-color: $primary !important;
+        .list-item-breadcrumbtrail {
+          color: $primary !important;
+        }
+      }
+    }
+    .bookmarks-results-list-item::before {
+      color: $primary !important;
+    }
+  }
+}
+
+.wrapper-footer{ 
+	footer#footer-openedx{
+		max-width: 1920px;
+		margin: 0px;
+		ul, ol{
+			margin: 0px;
+		}
+		.nav-legal a{
+			color: $primary !important;
+		}
+		.copyright{
+		    color: #767676 !important;
+		}
+	}
+}
