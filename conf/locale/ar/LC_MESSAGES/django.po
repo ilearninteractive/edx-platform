@@ -10134,7 +10134,7 @@ msgstr "اقتباسات"
 msgid ""
 "Markdown syntax is allowed. See the %(start_link)scheatsheet%(end_link)s for"
 " help."
-msgstr ""
+msgstr "بناء الجملة المسموح به مسموح به. راجع %(start_link)scheatsheet%(end_link)s للحصول على المساعدة."
 
 #: lms/templates/wiki/plugins/attachments/index.html
 #: wiki/plugins/attachments/wiki_plugin.py
@@ -11454,7 +11454,7 @@ msgid ""
 "{terms_of_service_link_start}{terms_of_service}{terms_of_service_link_end}"
 "                   and agree to our {privacy_policy_link_start}Privacy "
 "Policy{privacy_policy_link_end}."
-msgstr ""
+msgstr "إنشاء حساب لدى منصة {platform_name}, فإنك توافق على الالتزام بـ الشروط الخاص بنا {platform_name} {terms_of_service_link_start}{terms_of_service}{terms_of_service_link_end} وتوافق على {privacy_policy_link_start} سياسة الخصوصية {privacy_policy_link_end} الخاصة بالمنصة."
 
 #. Translators: "Terms of service" is a legal document users must agree to
 #. in order to register a new account.
@@ -13465,15 +13465,15 @@ msgstr "البحث عن مساق"
 #. Translators: 'Open edX' is a registered trademark, please keep this
 #. untranslated. See http://open.edx.org for more information.
 #: lms/templates/index_overlay.html
-msgid "Welcome to the Open edX{registered_trademark} platform!"
-msgstr "مرحبًا بك في منصة Open edX{registered_trademark}!"
+msgid "Welcome to the RDO{registered_trademark} platform!"
+msgstr "مرحبًا بك في منصة RDO{registered_trademark}!"
 
 #. Translators: 'Open edX' is a registered trademark, please keep this
 #. untranslated. See http://open.edx.org for more information.
 #: lms/templates/index_overlay.html
-msgid "It works! This is the default homepage for this Open edX instance."
+msgid "It works! This is the default homepage for this RDO instance."
 msgstr ""
-"نجح الأمر! أنت الآن في الصفحة الرئيسية الافتراضية لهذه الوحدة من Open edX."
+"نجح الأمر! أنت الآن في الصفحة الرئيسية الافتراضية لهذه الوحدة من RDO."
 
 #: lms/templates/invalid_email_key.html
 msgid "Invalid email change key"
@@ -17932,7 +17932,7 @@ msgstr "الملف الشخصي"
 
 #: lms/templates/header/navbar-authenticated.html
 msgid "Discover New"
-msgstr ""
+msgstr "تصفح الدورات"
 
 #. Translators: This is short for "System administration".
 #: lms/templates/header/navbar-authenticated.html
@@ -19484,7 +19484,7 @@ msgstr "عرض سجل الدرجات"
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
 msgid "View a specific learner's enrollment status"
-msgstr ""
+msgstr "عرض حالة تسجيل متعلم معين"
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
 msgid "Learner's {platform_name} email address or username *"
@@ -19496,7 +19496,7 @@ msgstr "عنوان البريد الإلكتروني أو اسم المستخد�
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
 msgid "View Enrollment Status"
-msgstr ""
+msgstr "عرض حالة التسجيل"
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
 msgid "View a specific learner's grades and progress"
