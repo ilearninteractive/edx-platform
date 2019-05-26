@@ -7,42 +7,133 @@ from django.urls import reverse
 
 from openedx.core.djangolib.markup import HTML, Text
 %>
+<%block name="head_extra">
+    <link rel="stylesheet" href="${static.url('css/partials/index_extra.css')}" type="text/css" media="all" />
+</%block>
+
+<div class="banner-img">
+  <img src="${static.url('images/slide1.jpg')}">
+</div>
 <main id="main" aria-label="Content" tabindex="-1">
-    <section class="home">
-      <header>
-        <div class="outer-wrapper">
-          
-<%doc>
-          <div class="title">
-            <div class="heading-group">
-              % if homepage_overlay_html:
-                ${homepage_overlay_html | n, decode.utf8}
-              % else:
-                <%include file="index_overlay.html" />
-              % endif
-            </div>
-            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-              <div class="course-search">
-                <form method="get" action="/courses">
-                  <label><span class="sr">${_("Search for a course")}</span>
-                    <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-                  </label>
-                  <button class="search-button" type="submit">
-                    <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
-                  </button>
-                </form>
-              </div>
-            % endif
-
+   <section class="layer-overlay">
+    <div class="container section-wrap">
+      <section class="platform-section">
+        <div class="section-title">
+          <h2 class="title">مزايا المنصة</h2>
+          <div class="separator separator-rouned">
+              <i class="fa fa-cog fa-spin"></i>
           </div>
-          </%doc>          
-          <%include file="index_promo_video.html" />
-        </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="icon-box">
+              <div href="#" class="">
+                <img src="${static.url('images/icon-1.png')}"/>
+              </div>
+              <h4 class="icon-box-title hidden">التدريب عبر الانترنت</h4>
+              <p class="">البرامج التدريبية متوفرة على الشبكة بشكل دائم دون ساعات محددة</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="icon-box">
+              <div href="#" class="">
+                <img src="${static.url('images/icon-2.png')}"/>
+              </div>
+              <h4 class="icon-box-title hidden">لغة التدريب</h4>
+              <p class="">تقدم الحزم التدريبية باللغة العربية وبتقييم ميسر ومحدد</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="icon-box">
+              <div href="#" class="">
+                <img src="${static.url('images/icon-3.png')}"/>
+              </div>
+              <h4 class="icon-box-title hidden">تصميم الدورات</h4>
+              <p class="">تم تصميم الدورات التدريبية بعنايه ويتم تقديمها بشكل مبسط للمستفيدين</p>
+            </div>
+          </div>
+<!--           <div class="col-md-3">
+            <div class="icon-box">
+              <div class="icon icon-color4">
+                <i class="pe-7s-medal"></i>
+              </div>
+              <h4 class="icon-box-title">شهادات معتمدة</h4>
+              <p class="">شهادات معتمدة ومعترف بها من المركز الوطني للتطوير المهني والتعليمي</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      </section>
+      <section id="gallery" class="home">
+        <header>
+          <div class="outer-wrapper">
+            <div class="title">
+              <div class="heading-group">
+                % if homepage_overlay_html:
+                  ${homepage_overlay_html | n, decode.utf8}
+                % else:
+                    ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
+                    <h1>${Text(_(u"Welcome to the Open edX{registered_trademark} platform!")).format(registered_trademark=HTML("<sup style='font-size: 65%'>&reg;</sup>"))}</h1>
+                    ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
+                    <p>${_("It works! This is the default homepage for this Open edX instance.")}</p>
+                % endif
+              </div>
+              % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+                <div class="course-search">
+                  <form method="get" action="/courses">
+                    <label><span class="sr">${_("Search for a course")}</span>
+                      <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+                    </label>
+                    <button class="search-button" type="submit">
+                      <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
+                    </button>
+                  </form>
+                </div>
+              % endif
 
-      </header>
-      <%include file="${courses_list}" />
+            </div>
 
-    </section>
+            % if show_homepage_promo_video:
+              <a href="#video-modal" class="media" rel="leanModal">
+                <div class="hero">
+                  <div class="play-intro"></div>
+                </div>
+              </a>
+            % endif
+          </div>
+        </header>
+        <div class="section-title">
+          <h2 class="title">الدورات التدريبية</span></h2>
+          <div class="separator separator-rouned">
+              <i class="fa fa-cog fa-spin"></i>
+          </div>
+        </div>
+        <%doc>
+         <div class="portfolio-filter filters-button-group button-group">
+            <button class="btn active category-filter-btn" data-filter="*">الكل</button>
+            <%
+              course_org_filter = configuration_helpers.get_current_site_orgs() or []
+            %>
+            % for category in categories:
+              % for course_org in course_org_filter:
+                % if category.coursecategorycourse_set.filter(course_id__contains=':' + course_org + '+').count():
+                  <button class="btn course-filter-btn" data-filter=".category-${category.slug}"><span class="fa fa-caret-down"></span> ${category.name}</button>
+                    <div class="dropdown-content">
+                      % for course in list(zip(category.get_course_ids(),category.get_course_names())):
+                      <a href="#" class="course-filter" data-filter="${course[0]}">${course[1]}</a>
+                      % endfor
+                    </div>
+                % endif
+              % endfor
+            % endfor
+          </div>
+        </%doc>
+          <%include file="${courses_list}" />
+
+      </section>
+    </div>
+  </section>
+
 </main>
 
 % if show_homepage_promo_video:

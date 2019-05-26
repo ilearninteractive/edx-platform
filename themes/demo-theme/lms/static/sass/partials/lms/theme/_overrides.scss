@@ -72,9 +72,4 @@ body.view-instructordash, body.view-progress {
 }
 
 // index page banner image
-.main-container section.home header{
-  background-image: url('/static/demo-theme/images/index-banner.jpg');
-}
-.home>header .outer-wrapper{
-  height: 161px;
-}
+.content-wrapper .banner-img{ margin: -20px -20px 0px -20px; }
