@@ -7,10 +7,10 @@
     .bookmarks-results-list-item {
 	    .list-item-breadcrumbtrail {
 	          color: $primary !important;
-	  	}
-	  	p.list-item-right-section span {
+	    }
+	    p.list-item-right-section span {
 	          color: $primary !important;
-	  	}
+	    }
 
       &:hover {
         border-color: $primary !important;
@@ -38,5 +38,43 @@
 		.copyright{
 		    color: #767676 !important;
 		}
+                .wrapper-logo{
+                    p{
+                        text-align: right;
+                        img{
+                            height: 91px;
+                        }
+                    }
+                }
+                body.view-wiki &{
+                    & .colophon{
+                        margin-right: 0px;
+                    }   
+                }
 	}
+}
+
+body.view-wiki .global-header .nav-links .secondary{
+    margin: 15px 0 0 40px !important;
+    & .dropdown-user-menu{
+        right: inherit !important;
+    }
+}
+
+body.view-instructordash, body.view-progress {
+    .global-header .nav-links .secondary{
+        margin: 15px 0 0 40px !important;
+    }
+}
+
+.wrap-instructor-info .instructor-info-action:hover{
+    color: #fff !important;
+}
+
+// index page banner image
+.main-container section.home header{
+  background-image: url('/static/demo-theme/images/index-banner.jpg');
+}
+.home>header .outer-wrapper{
+  height: 161px;
 }

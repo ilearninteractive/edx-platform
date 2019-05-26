@@ -1,27 +1,38 @@
 // Sample demo theme to demonstrate SASS overrides
 
+$static-path: '..';
+
 @font-face {
   font-family: 'Cairo';
-  src: url('../fonts/Cairo/Cairo-Regular.ttf');
+  src: url('#{$static-path}/fonts/Cairo/Cairo-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Cairo';
-  src: url('../../fonts/Cairo/Cairo-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
+//@font-face {
+//  font-family: 'Cairo';
+//  src: url('../fonts/Cairo/Cairo-Regular.ttf');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
+//@font-face {
+//  font-family: 'Cairo';
+//  src: url('../../fonts/Cairo/Cairo-Regular.ttf');
+//  font-weight: normal;
+//  font-style: normal;
+//}
 
 // Theme colors
 //
 // Note: define colors needed by your theme first
 
 // Define the primary red color
-$green: rgb(0, 129, 0);
+//$green: rgb(0, 129, 0);
+$green: #07519b;
 $blue: $green;
-$green-hover-active: rgb(0, 155, 0);
+//$green-hover-active: rgb(0, 155, 0);
+$green-hover-active: #0751c3;
 
 // $green: #006700;
 // $green: #00a780;
@@ -30,7 +41,8 @@ $green-hover-active: rgb(0, 155, 0);
 $primary: $green;
 
 $uxpl-blue-hover-active: $green-hover-active;
-$courseware-border-bottom-color: rgb(102, 255, 102);
+//$courseware-border-bottom-color: rgb(102, 255, 102);
+$courseware-border-bottom-color: #0783ea;
 
 $m-blue: $primary;  // uxpl blue base
 $m-blue-l1: tint($primary, 20%);
