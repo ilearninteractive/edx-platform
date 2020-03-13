@@ -1,9 +1,7 @@
 """
-Management command to bulk update many user's email addresses
+Management command to recover learners accounts
 """
 
-
-import csv
 import logging
 import unicodecsv
 
@@ -43,7 +41,7 @@ class Command(BaseCommand):
         send password reset email.
 
         csv file is expected to have one row per user with the format:
-        username, email_address, new_email_address
+        username, email, new_email
 
         Example:
             $ ... recover_account csv_file_path
