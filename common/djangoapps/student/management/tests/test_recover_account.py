@@ -49,7 +49,6 @@ class RecoverAccountTests(TestCase):
         resp = self.client.post(reset_link, data=request_params)
 
         # Verify the response status code is: 302 with password reset because 302 means success
-        # the user is  marked as active.
         self.assertEqual(resp.status_code, 302)
 
         self.assertTrue(self.client.login(username=self.user.username, password='password1'))
